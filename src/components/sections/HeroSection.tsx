@@ -18,7 +18,7 @@ export default function HeroSection({
   subtitle = "Hunnu Rotary Club was officially chartered on November 11, 2023, in Ulaanbaatar, receiving its charter from Rotary International. The club is a daughter club of Tuul Rotary Club and consists of 22 members from diverse professional backgrounds.",
   ctaText = "СУРГАЛТАНД БҮРТГҮҮЛЭХ",
   ctaHref = "/contact",
-  images = ["/images/hero/1.png", "/images/hero/2.png", "/images/hero/3.png"],
+  images = ["/images/hero/1.png", "/images/hero/2.png", "/images/hero/_DSC5263.jpg", "/images/hero/_DSC5323.jpg", "/images/hero/_DSC5343.jpg"],
   interval = 6000,
 }: HeroSectionProps) {
   const [current, setCurrent] = useState(0);

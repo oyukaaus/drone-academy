@@ -74,52 +74,7 @@ export default function HomePage() {
         </div>
       </section>
       <ProgramsSection></ProgramsSection>
-      <section className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <h2 className="text-center font-bold text-2xl md:text-3xl lg:text-3xl text-gray-600 mb-10">
-          Хамтын ажиллагаа
-        </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {coops.map((org, i) => (
-            <Card
-              key={i}
-              hoverable
-              className="group transition-all duration-300"
-            >
-              {/* LOGO */}
-              <div className="flex justify-center items-center">
-                <div className="relative h-[70px] w-full max-w-[220px]">
-                  <Image
-                    src={org.image}
-                    alt={org.title}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-
-              {/* TITLE */}
-              <p className="text-gray-600 text-center mt-3 font-medium">
-                {org.title}
-              </p>
-
-              {/* DETAILS (desktop hover, mobile always visible) */}
-              <div className="mt-4 text-sm text-gray-600 lg:opacity-0 lg:max-h-0 lg:overflow-hidden lg:group-hover:opacity-100 lg:group-hover:max-h-40 transition-all duration-300">
-                <p className="font-semibold">
-                  Хугацаа:{" "}
-                  <span className="font-normal">
-                    {org.startDate} – {org.endDate}
-                  </span>
-                </p>
-
-                <p className="font-semibold mt-1">
-                  Чиглэл: <span className="font-normal">{org.coop}</span>
-                </p>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }
