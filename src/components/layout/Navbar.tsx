@@ -23,7 +23,12 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openSection, setOpenSection] = useState<string | null>(null);
 
+  const go = (path: string) => {
+    router.push(path);
+    setMobileOpen(false);
+  };
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -126,7 +131,7 @@ export default function Navbar() {
                       Сургалтууд
                     </Button>
                   </Dropdown>
-                  <Link href="/teachers">
+                  {/* <Link href="/teachers">
                     <Button
                       className={` ${navItem("teachers")} ${
                         scrolled
@@ -136,7 +141,8 @@ export default function Navbar() {
                     >
                       Багш нар
                     </Button>
-                  </Link>                  <Link href="/graduates">
+                  </Link> */}
+                  <Link href="/graduates">
                     <Button
                       className={` ${navItem("graduates")} ${
                         scrolled
@@ -147,7 +153,7 @@ export default function Navbar() {
                       Төгсөгчид
                     </Button>
                   </Link>
-                  <Link href="/news">
+                  {/* <Link href="/news">
                     <Button
                       className={` ${navItem("news")} ${
                         scrolled
@@ -157,29 +163,11 @@ export default function Navbar() {
                     >
                       Мэдээ
                     </Button>
-                  </Link>{" "}
+                  </Link>{" "} */}
                 </nav>
               </div>
               {/* RIGHT */}
               <div className="flex items-center gap-2 sm:gap-4">
-                {/* <Dropdown
-                  menu={menu(
-                    [
-                      { label: "MN", path: "/mn" },
-                      { label: "EN", path: "/en" },
-                    ],
-                    router,
-                  )}
-                  onOpenChange={(o) => setOpenKey(o ? "project" : null)}
-                >
-                  <Button
-                    className={`${navItem("lang")} ${
-                      scrolled ? "text-black" : "text-white"
-                    } hidden sm:inline`}
-                  >
-                    <span className="font-montserrat">MN</span>
-                  </Button>
-                </Dropdown> */}
                 <Button
                   className="lg:hidden !border-none"
                   icon={<MenuOutlined />}
@@ -198,96 +186,84 @@ export default function Navbar() {
                   onClose={() => setMobileOpen(false)}
                   placement="right"
                   className="lg:hidden"
+                  size={300}
                 >
-                  <nav className="flex flex-col gap-4 text-lg">
-                    {/* HOME */}
-                    <Button
-                      type="text"
-                      className="text-left"
-                      onClick={() => {
-                        router.push("/");
-                        setMobileOpen(false);
-                      }}
+                  <nav className="flex flex-col text-[15px]">
+                    <div
+                      className="flex items-center gap-2 cursor-pointer ml-[-20px]"
+                      onClick={() => router.push("/")}
                     >
-                      Нүүр
-                    </Button>
-
+                      <Image
+                        src={
+                          scrolled ? "/images/white.png" : "/images/logo.png"
+                        }
+                        width={scrolled ? 200 : 60}
+                        alt="Drone academy"
+                        height={44}
+                        priority
+                      />
+                      <div
+                        className={`
+    text-[11px] sm:text-[12px] md:text-[12px]
+    leading-tight font-semibold font-montserrat ml-[-10px]
+    ${scrolled ? "hidden" : "text-white"}
+  `}
+                      >
+                        <span className="font-bold">DRONE ACADEMY</span>
+                        <br />
+                        <span className="text-[10px] ">MONGOLIA</span>
+                      </div>
+                    </div>
                     {/* ABOUT */}
-                    <div className="border-t pt-3">
-                      <p className="text-sm text-gray-500 mb-2">Бидний тухай</p>
-                      <Button
-                        type="text"
-                        className="text-left"
-                        onClick={() => {
-                          router.push("/about");
-                          setMobileOpen(false);
-                        }}
+                    <button
+                      className=" py-3 text-left font-semibold"
+                      onClick={() => go("/about")}
+                    >
+                      ТАНИЛЦУУЛГА
+                    </button>
+
+                    {/* TRAINING */}
+                    <div className="border-t py-3">
+                      <button
+                        className="w-full flex items-center justify-between font-semibold"
+                        onClick={() =>
+                          setOpenSection(
+                            openSection === "training" ? null : "training",
+                          )
+                        }
                       >
-                        Танилцуулга
-                      </Button>
+                        СУРГАЛТУУД
+                        <span>{openSection === "training" ? "−" : "+"}</span>
+                      </button>
+
+                      {openSection === "training" && (
+                        <div className="mt-3 flex flex-col gap-3 pl-2 text-gray-700 items-start">
+                          <button onClick={() => go("/beginner")}>
+                            Анхан шат
+                          </button>
+                          <button onClick={() => go("/mid")}>Дунд шат</button>
+                          <button onClick={() => go("/advanced")}>
+                            Ахисан шат
+                          </button>
+                        </div>
+                      )}
                     </div>
 
-                    {/* ACTIVITIES */}
-                    <div className="border-t pt-3">
-                      <p className="text-sm text-gray-500 mb-2">Сургалт</p>
-                      <Button
-                        type="text"
-                        className="text-left"
-                        onClick={() => {
-                          router.push("/membership");
-                          setMobileOpen(false);
-                        }}
-                      >
-                        Анхан шат
-                      </Button>
-                      <Button
-                        type="text"
-                        className="text-left"
-                        onClick={() => {
-                          router.push("/events");
-                          setMobileOpen(false);
-                        }}
-                      >
-                        Ахисан түвшин
-                      </Button>
-                      <Button
-                        type="text"
-                        className="text-left"
-                        onClick={() => {
-                          router.push("/coop");
-                          setMobileOpen(false);
-                        }}
-                      >
-                        Хамтын ажиллагаа
-                      </Button>
-                    </div>
-                    <div className="border-t pt-3">
-                      <p className="text-sm text-gray-500 mb-2">
-                        Мэдээ, мэдээлэл
-                      </p>
-                      <Button
-                        type="text"
-                        className="text-left"
-                        onClick={() => {
-                          router.push("/news");
-                          setMobileOpen(false);
-                        }}
-                      >
-                        Мэдээ
-                      </Button>
-                    </div>
+                    {/* GRADUATES */}
+                    <button
+                      className="border-t py-3 text-left font-semibold"
+                      onClick={() => go("/graduates")}
+                    >
+                      ТӨГСӨГЧИД
+                    </button>
 
-                    {/* CTA */}
-                    <Button
-                      type="primary"
-                      className="mt-6"
-                      onClick={() => {
-                        router.push("/contact");
-                        setMobileOpen(false);
-                      }}
+                    {/* CONTACT CTA */}
+                    <button
+                      className="mt-6 bg-[#f04b2f] text-white rounded-lg py-3 text-center font-semibold"
+                      onClick={() => go("/contact")}
                     >
                       Холбоо барих
-                    </Button>
+                    </button>
                   </nav>
                 </Drawer>
               </div>

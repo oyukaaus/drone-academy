@@ -36,13 +36,12 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/mid" className="hover:text-white">
+                    Дунд шат
+                  </Link>
+                </li>       <li>
                   <Link href="/advanced" className="hover:text-white">
                     Ахисан шат
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/certificate" className="hover:text-white">
-                    Certificate
                   </Link>
                 </li>
               </ul>
@@ -52,11 +51,11 @@ export default function Footer() {
             <div>
               <h4 className="font-semibold mb-4 text-base">Чухал холбоосууд</h4>
               <ul className="space-y-2 text-sm text-white/80">
-                <li>
+                {/* <li>
                   <Link href="/news" className="hover:text-white">
                     Мэдээ
                   </Link>
-                </li>{" "}
+                </li>{" "} */}
                 <li>
                   <Link href="/contact" className="hover:text-white">
                     Холбоо барих

@@ -52,10 +52,10 @@ export default function ProgramsSection() {
                   rounded-md
                   hover:bg-[#1f7fa3]
                   transition
-                "
+                  w-[220px]    
+                  justify-center            "
               >
                 {item.buttonText}
-                <span className="text-lg">→</span>
               </button>
             </div>
           </div>
