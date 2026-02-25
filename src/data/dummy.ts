@@ -47,23 +47,35 @@ export const teachers = [
 export const graduates = [
   {
     id: 1,
-    title: "2025 оны 4-р ээлж",
-    image: "/images/graduates/2/1.jpg",
+    title: "2026 оны 2-р ээлж",
+    images: [
+      "/images/graduates/3/_DSC5089.jpg",
+      "/images/graduates/3/_DSC5020.jpg",
+      "/images/graduates/3/_DSC5025.jpg",
+      "/images/graduates/3/_DSC5029.jpg",
+      "/images/graduates/3/_DSC5046.jpg",
+      "/images/graduates/3/_DSC5049.jpg",
+      "/images/graduates/3/_DSC5051.jpg",
+    ],
   },
   {
     id: 2,
-    title: "2025 оны 3-р ээлж",
-    image: "/images/graduates/2/1.jpg",
+    title: "2026 оны 1-р ээлж",
+    images: [
+      "/images/graduates/2/1.jpg",
+      "/images/graduates/2/2.jpg",
+      "/images/graduates/2/3.jpg",
+    ],
   },
   {
     id: 3,
     title: "2025 оны 2-р ээлж",
-    image: "/images/graduates/2/5.jpg",
+    images: ["/images/graduates/2/4.jpg", "/images/graduates/2/2.jpg"],
   },
   {
     id: 4,
     title: "2025 оны 1-р ээлж",
-    image: "/images/graduates/2/7.jpg",
+    images: ["/images/graduates/1/1.jpg", "/images/graduates/2/2.jpg"],
   },
 ];
 
@@ -76,7 +88,7 @@ export const programs = [
     image: "/images/programs/1.jpg",
     buttonText: "СУРГАЛТ",
     reverse: false,
-    url:"/advanced"
+    url: "/advanced",
   },
   {
     id: 2,
@@ -87,7 +99,7 @@ export const programs = [
     image: "/images/programs/2.jpg",
     buttonText: "СУРГАЛТ",
     reverse: true,
-    url:"/beginner"
+    url: "/beginner",
   },
   {
     id: 3,
@@ -97,7 +109,7 @@ export const programs = [
     image: "/images/programs/3.jpg",
     buttonText: "ХАМТАРЧ АЖИЛЛАХ",
     reverse: false,
-    url:"/coop"
+    url: "/coop",
   },
 ];
 
@@ -795,20 +807,19 @@ export const areas = [
 ];
 
 export const gallery = [
-      "/images/gallery/13.jpg",
-      "/images/gallery/1.jpg",
-      "/images/gallery/2.jpg",
-      "/images/gallery/3.jpg",
-      "/images/gallery/4.jpg",
-      "/images/gallery/5.jpg",
-      "/images/gallery/7.jpg",
-      "/images/gallery/8.jpg",
-      "/images/gallery/9.jpg",
-      "/images/gallery/10.jpg",
-      "/images/gallery/1.jpg",
-      "/images/gallery/11.jpg",
-      "/images/gallery/12.jpg",
-     
+  "/images/gallery/13.jpg",
+  "/images/gallery/1.jpg",
+  "/images/gallery/2.jpg",
+  "/images/gallery/3.jpg",
+  "/images/gallery/4.jpg",
+  "/images/gallery/5.jpg",
+  "/images/gallery/7.jpg",
+  "/images/gallery/8.jpg",
+  "/images/gallery/9.jpg",
+  "/images/gallery/10.jpg",
+  "/images/gallery/1.jpg",
+  "/images/gallery/11.jpg",
+  "/images/gallery/12.jpg",
 ];
 export const videos = [
   {
@@ -867,8 +878,7 @@ export const academyPrinciples = [
   },
   {
     title: "Инноваци",
-    description:
-      "Орчин үеийн технологи, дэлхийн стандартад нийцсэн FPV соёл",
+    description: "Орчин үеийн технологи, дэлхийн стандартад нийцсэн FPV соёл",
   },
   {
     title: "Хариуцлага",
