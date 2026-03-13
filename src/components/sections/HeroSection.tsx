@@ -31,7 +31,7 @@ export default function HeroSection({
   }, [images.length, interval]);
 
   return (
-    <section className="relative max-w-full mx-auto h-[70vh] min-h-[520px] max-h-[820px] overflow-hidden rounded-xl shadow-lg">
+    <section className="relative max-w-full mx-auto h-[70vh] min-h-[520px] max-h-[820px] overflow-hidden">
       {/* Background images */}
       {images.map((src, index) => (
         <div
@@ -57,14 +57,9 @@ export default function HeroSection({
       {/* Content */}
       <div className="relative z-10 h-full flex items-end justify-center px-6 pb-24">
         <div className="max-w-3xl text-center text-white">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6">
+          <h1 className="heading-xl font-light tracking-tight mb-6">
             {title}
           </h1>
-
-          {/* <p className="text-sm sm:text-base md:text-lg opacity-90 mb-10 leading-relaxed">
-            {subtitle}
-          </p> */}
-
           <Link href={ctaHref}>
             <span className="inline-flex items-center justify-center rounded-full border border-white px-8 py-3 text-sm font-semibold tracking-wide transition hover:bg-white hover:text-black">
               {ctaText}

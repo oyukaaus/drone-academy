@@ -1,26 +1,21 @@
 "use client";
 
-import { coops, highlights } from "../data/dummy";
+import { highlights } from "../data/dummy";
 import { useRouter } from "next/navigation";
 import HeroSection from "../components/sections/HeroSection";
 import ProgramsSection from "../components/sections/ProgramsSection";
-import Image from "next/image";
-import { Card } from "antd";
 
 export default function HomePage() {
   const router = useRouter();
 
   return (
     <div className="bg-white">
-      <HeroSection></HeroSection>
+      <HeroSection />
 
-      {/* <NewsSection />
-      <ProjectSection /> */}
-      <section className="w-full bg-white  ">
+      {/* ABOUT */}
+      <section className="w-full bg-white py-16">
         <div className="max-w-6xl mx-auto px-4">
-          {/* Title */}
-          {/* Content */}
-          <div className="space-y-6 text-gray-800 text-base md:text-lg leading-relaxed mt-4">
+          <div className="space-y-6 text-body text-gray-800 leading-relaxed mt-4 max-w-6xl">
             <p className="text-justify">
               <span className="font-semibold">
                 Дрон Академи Монголиа /Drone Academy Mongolia/
@@ -44,17 +39,21 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-white py-8 md:py-24">
+
+      {/* HIGHLIGHTS */}
+      <section className="w-full bg-white py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4">
           {/* Section title */}
-          <h2 className="text-black text-2xl md:text-3xl font-medium mb-4">
-            Онцлог, давуу тал
-          </h2>
+          <h2 className="heading-lg mb-10">Онцлог, давуу тал</h2>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {highlights.map((item) => (
-              <div key={item.id} className="space-y-4">
+              <div
+                key={item.id}
+                className="space-y-4 cursor-pointer"
+                onClick={() => router.push(item.url)}
+              >
                 <div className="overflow-hidden rounded-sm h-[400px]">
                   <img
                     src={item.image}
@@ -62,19 +61,16 @@ export default function HomePage() {
                     className="w-full h-[400px] object-cover"
                   />
                 </div>
-
-                <h3 className="text-blue-700 text-xl font-medium">
-                  {item.title}
-                </h3>
-
-                <p className="text-gray-800 text-justify">{item.description}</p>
+                <h3 className="heading-md text-blue-700 h-12">{item.title}</h3>
+                <p className="text-body text-gray-800 text-justify">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <ProgramsSection></ProgramsSection>
-
+      <ProgramsSection />
     </div>
   );
 }

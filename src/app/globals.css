@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+  /* HERO / MAIN TITLE */
+  .heading-xl {
+    @apply text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight mb-6;
+  }
+
+  /* SECTION TITLE */
+  .heading-lg {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight mb-4;
+  }
+
+  /* SUB TITLE */
+  .heading-md {
+    @apply text-xl md:text-2xl font-semibold tracking-tight mb-3;
+  }
+
+  /* BODY TEXT */
+  .text-body {
+    @apply text-base leading-relaxed text-gray-600;
+  }
+
+  /* SMALL TEXT / META */
+  .text-small {
+    @apply text-sm text-gray-500;
+  }
+
+}

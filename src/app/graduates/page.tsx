@@ -2,7 +2,6 @@
 
 import { graduates } from "@/src/data/dummy";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 export default function GraduatesPage() {
@@ -11,30 +10,30 @@ export default function GraduatesPage() {
 
   const handlePrev = () => {
     if (selectedGraduate === null) return;
-
     const images = graduates[selectedGraduate].images;
 
     setSelectedImageIndex(
-      selectedImageIndex === 0 ? images.length - 1 : selectedImageIndex - 1,
+      selectedImageIndex === 0 ? images.length - 1 : selectedImageIndex - 1
     );
   };
 
   const handleNext = () => {
     if (selectedGraduate === null) return;
-
     const images = graduates[selectedGraduate].images;
 
     setSelectedImageIndex(
-      selectedImageIndex === images.length - 1 ? 0 : selectedImageIndex + 1,
+      selectedImageIndex === images.length - 1 ? 0 : selectedImageIndex + 1
     );
   };
+
   return (
     <main>
-      {/* ===== TOP SECTION ===== */}
-      <section className=" py-24">
+      {/* ===== HERO SECTION ===== */}
+      <section >
         <div className="max-w-[1400px] mx-auto relative flex items-start">
+
           {/* LEFT IMAGE */}
-          <div className="w-[70%] h-[360px] overflow-hidden ">
+          <div className="w-[70%] h-[360px] overflow-hidden">
             <img
               src="/images/hero/1.png"
               alt="Graduates"
@@ -44,11 +43,12 @@ export default function GraduatesPage() {
 
           {/* RIGHT CONTENT CARD */}
           <div className="w-[60%] h-[360px] bg-white px-16 py-16 absolute mt-20 ml-[40%] shadow-lg">
-            <h2 className="text-[28px] font-serif text-[#2c4a6e] mb-6">
+            <h1 className="heading-lg text-[#2c4a6e]">
               Төгсөгчид
-            </h2>
-            <div className="text-sm leading-relaxed text-[#3f4f5f] ">
-              <p className="text-sm leading-relaxed text-[#3f4f5f] ">
+            </h1>
+
+            <div className="text-body text-[#3f4f5f] mt-4">
+              <p>
                 Drone Academy Mongolia нь дрон жолоодлого, агаарын зураг авалт,
                 FPV нислэг болон мэргэжлийн контент үйлдвэрлэлийн чиглэлээр
                 тасралтгүй сургалт зохион байгуулж, чадварлаг дрон нисгэгчдийг
@@ -60,14 +60,16 @@ export default function GraduatesPage() {
               </p>
             </div>
           </div>
+
         </div>
       </section>
 
+
       {/* ===== STATS ===== */}
       <section className="py-24 text-center">
-        <h3 className="text-xl font-serif tracking-wide mb-16">
+        <h2 className="heading-md tracking-wide mb-16">
           СУРГАЛТ БОЛОН ҮЙЛ АЖИЛЛАГААНУУД
-        </h3>
+        </h2>
 
         <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
           <Stat number="5" text="Нийт дроны багш" />
@@ -77,12 +79,13 @@ export default function GraduatesPage() {
         </div>
       </section>
 
-      {/* ===== GALLERY GRID ===== */}
-      {/* ===== GALLERY GRID ===== */}
+
+      {/* ===== GALLERY ===== */}
       <section className="py-16 max-w-[1400px] mx-auto">
-        <h3 className="text-center font-serif text-xl tracking-wide mb-16">
+
+        <h2 className="heading-md text-center mb-16">
           МАНАЙ ТӨГСӨГЧИД
-        </h3>
+        </h2>
 
         <div className="px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {graduates.map((item, index) => (
@@ -100,7 +103,7 @@ export default function GraduatesPage() {
               />
 
               <div className="p-4">
-                <span className="text-sm text-blue-700 underline">
+                <span className="text-small text-blue-700 underline">
                   {item.title}
                 </span>
               </div>
@@ -108,8 +111,11 @@ export default function GraduatesPage() {
           ))}
         </div>
 
+
+        {/* ===== MODAL ===== */}
         {selectedGraduate !== null && (
           <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+
             {/* Close */}
             <button
               className="absolute top-6 right-6 text-white text-3xl"
@@ -135,7 +141,7 @@ export default function GraduatesPage() {
                 className="w-full max-h-[80vh] object-contain rounded-lg"
               />
 
-              <p className="text-white text-center mt-4">
+              <p className="text-small text-white text-center mt-4">
                 {graduates[selectedGraduate].title} ({selectedImageIndex + 1} /{" "}
                 {graduates[selectedGraduate].images.length})
               </p>
@@ -148,6 +154,7 @@ export default function GraduatesPage() {
             >
               ›
             </button>
+
           </div>
         )}
       </section>
@@ -155,12 +162,13 @@ export default function GraduatesPage() {
   );
 }
 
-/* ===== COMPONENTS ===== */
+
+/* ===== STAT COMPONENT ===== */
 function Stat({ number, text }: { number: string; text: string }) {
   return (
     <div>
-      <div className="text-4xl font-serif mb-2">{number}</div>
-      <p className="text-sm text-gray-700 leading-snug">{text}</p>
+      <div className="heading-md mb-2">{number}</div>
+      <p className="text-small text-gray-700">{text}</p>
     </div>
   );
 }

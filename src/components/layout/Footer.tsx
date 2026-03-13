@@ -2,24 +2,25 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="md:px-20 lg:px-20 px-4 ">
+    <div className="">
       <footer
         className="
-  bg-gradient-to-b from-[#0e4a6f] to-black
+  bg-[#202E33]
   text-white
-  rounded-[24px]
   mt-16 sm:mt-20 lg:mt-24 md:px-20 lg:px-20 px-4 
 "
       >
-        <div className="max-w-[1400px] px-4 sm:px-6 lg:px-8 py-14 sm:mx-6 md:mx-10 lg:mx-auto ">
+        <div className="max-w-full px-4 sm:px-6 lg:px-8 py-14 sm:mx-6 md:mx-10 lg:mx-auto ">
           {/* TOP GRID */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Column 1 */}
             <div>
-              <h4 className="font-semibold mb-4 text-base">Бидний тухай</h4>
+              <p className="font-semibold mb-4 text-base text-sm border-b py-4">
+                Бидний тухай
+              </p>
               <ul className="space-y-2 text-sm text-white/80">
                 <li>
-                  <Link href="/about" className="hover:text-white">
+                  <Link href="/about" className="hover:text-white text-xs">
                     Танилцуулга
                   </Link>
                 </li>
@@ -28,8 +29,10 @@ export default function Footer() {
 
             {/* Column 2 */}
             <div>
-              <h4 className="font-semibold mb-4 text-base">Сургалтууд</h4>
-              <ul className="space-y-2 text-sm text-white/80">
+              <h4 className="font-semibold mb-4 text-base text-sm border-b py-4">
+                Сургалтууд
+              </h4>
+              <ul className="space-y-2 text-xs text-white/80">
                 <li>
                   <Link href="/beginner" className="hover:text-white">
                     Анхан шат
@@ -39,7 +42,8 @@ export default function Footer() {
                   <Link href="/mid" className="hover:text-white">
                     Дунд шат
                   </Link>
-                </li>       <li>
+                </li>{" "}
+                <li>
                   <Link href="/advanced" className="hover:text-white">
                     Ахисан шат
                   </Link>
@@ -49,15 +53,17 @@ export default function Footer() {
 
             {/* Column 3 */}
             <div>
-              <h4 className="font-semibold mb-4 text-base">Чухал холбоосууд</h4>
-              <ul className="space-y-2 text-sm text-white/80">
+              <h4 className="font-semibold mb-4 text-base text-sm border-b py-4">
+                Чухал холбоосууд
+              </h4>
+              <ul className="space-y-2 text-xs text-white/80">
                 {/* <li>
                   <Link href="/news" className="hover:text-white">
                     Мэдээ
                   </Link>
                 </li>{" "} */}
                 <li>
-                  <Link href="/contact" className="hover:text-white">
+                  <Link href="/contact" className="hover:text-white text-xs">
                     Холбоо барих
                   </Link>
                 </li>
@@ -66,8 +72,10 @@ export default function Footer() {
 
             {/* Column 4 */}
             <div>
-              <h4 className="font-semibold mb-4 text-base">Холбоо барих</h4>
-              <div className="text-sm text-white/80 space-y-2">
+              <h4 className="font-semibold mb-4 text-base text-sm border-b py-4">
+                Холбоо барих
+              </h4>
+              <div className="text-xs text-white/80 space-y-2">
                 <p className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -169,9 +177,7 @@ export default function Footer() {
 
           {/* BOTTOM */}
           <div className="flex flex-col sm:flex-row justify-between items-center text-xs text-white/70 gap-4">
-            <span>
-              © {new Date().getFullYear()} Drone Academy Mongolia
-            </span>
+            <span>© {new Date().getFullYear()} Drone Academy Mongolia</span>
             <span>Вэбсайтыг SkySolution бүтээв</span>
           </div>
         </div>
