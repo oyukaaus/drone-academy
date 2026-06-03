@@ -20,12 +20,12 @@ type Props = {
 
 export default function CourseCard({ course }: Props) {
   return (
-   <div className="bg-white max-w-6xl mx-auto rounded-3xl shadow-lg overflow-hidden px-6 py-10 md:px-10 md:py-14 space-y-8">   <h1 className="heading-xl">Сургалт</h1>
-
+    <div className="bg-white max-w-6xl mx-auto rounded-3xl shadow-lg overflow-hidden px-6 py-10 md:px-10 md:py-14 space-y-8">
+      {" "}
+      <h1 className="heading-xl">Сургалт</h1>
       <h2 className="heading-lg border-l-4 border-cyan-500 pl-4">
         {course.title}
       </h2>
-
       {/* INTRO */}
       <p className="text-gray-700 text-body leading-relaxed mb-8">
         {course.desc}
@@ -42,7 +42,6 @@ export default function CourseCard({ course }: Props) {
           <span className="ml-2 text-[#2596be]">{course.duration}</span>
         </p>
       </div>
-
       {/* TABLE */}
       <div className="mt-10 overflow-hidden rounded-xl border">
         <table className="w-full border border-gray-200 rounded-xl overflow-hidden text-sm">
@@ -111,7 +110,6 @@ export default function CourseCard({ course }: Props) {
           </tbody>
         </table>
       </div>
-
       {/* RESULT */}
       <div className="mt-12">
         <h2 className="heading-md font-semibold text-gray-900 mb-4">

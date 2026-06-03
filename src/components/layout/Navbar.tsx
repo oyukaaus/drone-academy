@@ -50,7 +50,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="h-[110px]">
+      <div className="h-[80px]">
         {/* <header className="fixed top-0 left-0 w-full  z-50 transition-all duration-300 "> */}
         <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300  ">
           <div
@@ -59,8 +59,7 @@ export default function Navbar() {
             {/* FLOATING BAR */}
             <div
               className="
-  h-[64px] sm:h-[68px] lg:h-[72px]
-  mt-3 sm:mt-4 lg:mt-5
+  h-[80px] lg:h-[80px]
   px-4 sm:px-6 lg:px-8
   flex items-center justify-between
 "

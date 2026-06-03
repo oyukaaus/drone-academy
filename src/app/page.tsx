@@ -19,7 +19,7 @@ export default function HomePage() {
             <p className="text-justify">
               <span className="font-semibold">
                 Дрон Академи Монголиа /Drone Academy Mongolia/
-              </span>{" "}
+              </span>
               нь Монголын Дрон Нисгэгчдийн Холбооны гишүүн байгууллага бөгөөд
               дрон технологийн мэдлэг, ур чадвар, зөв хэрэглээг Монгол Улсад
               мэргэжлийн түвшинд түгээн дэлгэрүүлэх зорилготой сургалт,

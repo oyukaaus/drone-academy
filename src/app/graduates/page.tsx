@@ -66,8 +66,8 @@ export default function GraduatesPage() {
 
 
       {/* ===== STATS ===== */}
-      <section className="py-24 text-center">
-        <h2 className="heading-md tracking-wide mb-16">
+      <section className="py-16 text-center">
+        <h2 className="heading-md tracking-wide mt-16 mb-8">
           СУРГАЛТ БОЛОН ҮЙЛ АЖИЛЛАГААНУУД
         </h2>
 

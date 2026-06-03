@@ -24,16 +24,16 @@ export default function AboutPage() {
               түгээн дэлгэрүүлэх зорилготой академи юм.
             </p>
 
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 transition">
+            {/* <button className="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 transition">
               Илүү ихийг унших →
-            </button>
+            </button> */}
           </div>
 
           {/* RIGHT IMAGE */}
           <div className="relative">
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img
-                src="/images/drone-academy.jpg"
+                src="/images/graduates/26-5/1.jpg"
                 alt="Drone Academy"
                 className="w-full h-[320px] object-cover"
               />
